@@ -62,7 +62,13 @@ Comandos para configurar um projeto com o Framework TailWind
 
 - Após rodar o comando acima deverá ser criado um arquivo style.main.css
 - Faça a comparação de tamanho do arquivo Buildado style.css e do arquivo minificado e com o CSS não utilizado removido style.css.min. Altere o 
-<link rel="stylesheet" href="style.css"> para <link rel="stylesheet" href="style.main.css"> no index.html e veja que não mudará nada no seu site.
+
+    <link rel="stylesheet" href="style.css"> 
+
+    para 
+
+    <link rel="stylesheet" href="style.main.css"> 
+no index.html e veja que não mudará nada no seu site.
 
 
 
