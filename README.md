@@ -1,7 +1,6 @@
 <h2>Veja a demo da página do Tutorial</h2>
 
-[Demo](https://fabiosantos.dev/logintailwind/){:target="_blank"}
-[go](http://stackoverflow.com){:target="_blank"}.
+<a href="https://fabiosantos.dev/logintailwind/" target="_blank">Demo</a>
 
 <h2>Comandos para configurar um projeto com o Framework TailWind</h2>
 
