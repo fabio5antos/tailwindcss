@@ -6,6 +6,15 @@
     <title>TailWind CSS - Treinamento</title>
     <!--<link rel="stylesheet" href="style.css">-->
     <link rel="stylesheet" href="style.main.css">
+    <style>
+        .modal {
+          transition: opacity 0.25s ease;
+        }
+        body.modal-active {
+          overflow-x: hidden;
+          overflow-y: visible !important;
+        }
+      </style>
 </head>
 <body class="bg-indigo-200 font-body">
     <div class="grid grid-cols-1 lg:grid-cols-2">
@@ -23,18 +32,114 @@
                         <p class="text-xl">Fábio Santos</p>
                         <p class="text-sm text-gray-600">Proprietário da FSS Entretenimentos LTDA-ME</p>
                         <div class="mt-4">
-                            <button type="button" class="text-red-500 hover:text-white hover:bg-red-500 border border-red-500 font-semibold rounded-md text-xs px-4 py-1 outline-none">
-                                Não é Fábio Santos?
+                            <button type="button" class="modal-open text-red-500 bg-red-100 hover:text-white hover:bg-red-500 border border-red-500 font-semibold rounded-md text-2xs px-8 py-2 outline-none">
+                                Quem é Fábio Santos?
                             </button>
                         </div>
                     </div>
                 </div>
-                <form action="" class="flex w-full mt-8">
+                <!--<form action="" class="flex w-full mt-8">
                     <input type="password" placeholder="Sua senha" class="flex-1 w-full text-gray-700 bg-gray-200 rounded-md hover:bg-white border border-gray-200 outline-none focus:bg-white py-2 px-4">
                     <button type="button" class="flex-shrink-0 btn btn-teal ml-4">Entrar</button>
-                </form>
+                </form>-->
+            </div>
+            
+        </div>
+        
+    </div>
+    <!--Modal-->
+  <div class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center">
+    <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
+    
+    <div class="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
+      
+      <div class="modal-close absolute top-0 right-0 cursor-pointer flex flex-col items-center mt-4 mr-4 text-white text-sm z-50">
+        <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+          <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+        </svg>
+        <span class="text-sm">(Sair)</span>
+      </div>
+
+      <!-- Add margin if you want to see some of the overlay behind the modal-->
+      <div class="modal-content py-4 px-6">
+        <!--Title-->
+        <div class="flex justify-between items-center pb-3">
+          <p class="text-2xl font-bold text-center">Informações</p>
+          <div class="modal-close cursor-pointer z-50">
+            <svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+              <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+            </svg>
+          </div>
+        </div>
+
+        <!--Body-->
+        <div class="sm:items-center flex bg-white rounded-lg mt-5">
+            <img src="img/fabio.jpg" alt="" class="sm:flex-shrink-0 mx-auto sm:mx-0 h-24 rounded-full">
+            <div class="sm:ml-4 sm:text-left text-center">
+                <h2 class="text-lg">Fábio Santos</h2>
+                <div class="text-purple-500">Diretor da FSS Entretenimentos</div>
+                <div class="text-gray-600">fabiosant2005@hotmail.com</div>
+                <div class="text-gray-600">(86) 98825-7929</div>
+                <hr class="my-6">
+                <div class="text-indigo-500 text-center italic">
+                    <a class="flex items-center" href="https://fabiosantos.dev">
+                        <svg class="h-3 w-3 fill-current mr-2" id="Capa_1" enable-background="new 0 0 512 512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><g>
+                            <path d="m465.183 108.409c5.291-6.492 8.471-14.771 8.471-23.779 0-20.79-16.914-37.704-37.704-37.704-8.351 0-16.074 2.733-22.329 7.347-44.839-35.04-100.552-54.273-157.621-54.273-46.153 0-91.383 12.417-130.8 35.908-3.558 2.12-4.723 6.724-2.603 10.282s6.723 4.724 10.282 2.604c17.236-10.272 35.655-18.29 54.795-23.936-13.815 10.638-26.693 24.539-38.195 41.463-9.826 14.458-18.407 30.76-25.61 48.45-13.345-8.752-25.86-18.847-37.321-30.172 6.512-6.418 13.428-12.514 20.733-18.25 3.258-2.558 3.825-7.272 1.267-10.53s-7.273-3.824-10.53-1.267c-29.851 23.44-54.534 53.742-71.382 87.63-17.675 35.547-26.636 73.841-26.636 113.818 0 53.384 16.172 104.271 46.821 147.596-5.293 6.493-8.475 14.772-8.475 23.784 0 20.79 16.914 37.704 37.704 37.704 8.356 0 16.083-2.737 22.341-7.355 44.826 35.039 100.535 54.271 157.609 54.271 68.379 0 132.666-26.629 181.019-74.981 48.352-48.353 74.981-112.64 74.981-181.019 0-53.382-16.171-104.268-46.817-147.591zm11.057 155.091h20.632c-1.732 57.023-23.187 110.644-61.109 153.008-6.094-6.01-12.482-11.716-19.099-17.051 1.604-4.183 2.492-8.718 2.492-13.459 0-13.147-6.768-24.738-16.999-31.488 7.418-28.908 11.442-59.46 11.992-91.01h28.81c4.142 0 7.5-3.358 7.5-7.5s-3.358-7.5-7.5-7.5h-28.813c-.747-42.51-7.84-83.273-20.531-119.357 6.863-4.384 13.533-9.11 19.992-14.164 6.257 4.619 13.984 7.355 22.341 7.355 6.357 0 12.347-1.588 17.607-4.377 27.01 38.546 41.891 83.393 43.318 130.543h-20.633c-4.142 0-7.5 3.358-7.5 7.5s3.358 7.5 7.5 7.5zm-377.851 133.53c-6.257-4.618-13.984-7.354-22.339-7.354-6.355 0-12.343 1.587-17.601 4.375-27.014-38.548-41.896-83.398-43.324-130.551h53.205c3.107 15.332 15.544 27.315 31.106 29.749 2.844 31.742 9.333 62.109 18.994 89.623-6.886 4.385-13.578 9.105-20.041 14.158zm120.221-230.502c2.041 16.058 14.211 28.997 29.89 32.174v49.798h-106.265c-2.883-14.227-13.802-25.568-27.796-29.073 2.663-29.184 8.509-57.085 17.141-82.457 26.887 14.968 56.386 25.061 87.03 29.558zm162.843 181.766c-11.516 0-21.837 5.195-28.758 13.359-28.384-11.605-58.327-17.91-89.195-18.788v-79.365h135.646c-.535 29.601-4.243 58.255-11.045 85.394-2.16-.387-4.379-.6-6.648-.6zm-117.953-99.794v-49.798c15.68-3.178 27.849-16.117 29.89-32.175 30.705-4.494 60.162-14.519 87.09-29.534 11.507 33.767 17.942 71.801 18.664 111.506h-135.644zm28.784-96.972c-3.803-13.479-14.921-23.921-28.784-26.73v-109.461c34.753 3.046 67.416 27.212 92.663 68.837 7.211 11.89 13.573 24.815 19.052 38.564-25.583 14.593-53.645 24.369-82.931 28.79zm-36.284-12.482c12.519 0 22.704 10.185 22.704 22.704s-10.185 22.704-22.704 22.704-22.704-10.185-22.704-22.704 10.185-22.704 22.704-22.704zm-150.717 94.25c12.519 0 22.704 10.185 22.704 22.704s-10.185 22.704-22.704 22.704c-12.515 0-22.696-10.178-22.703-22.691 0-.004.001-.008.001-.013s-.001-.009-.001-.013c.006-12.513 10.188-22.691 22.703-22.691zm9.157 59.277c13.994-3.505 24.912-14.846 27.796-29.073h106.264v79.375c-41.101 1.212-81.263 12.361-116.916 32.166-8.633-25.375-14.481-53.28-17.144-82.468zm134.06 65.308v138.771c-31.821-2.84-62.33-23.671-86.614-59.404-9.667-14.225-18.064-30.375-25.055-47.964 33.94-19.287 72.343-30.171 111.669-31.403zm15-.006c28.328.856 55.818 6.568 81.919 17.022-1.084 3.511-1.67 7.238-1.67 11.1 0 13.563 7.201 25.471 17.977 32.115-25.564 47.105-60.765 75.225-98.226 78.547zm95.249 28.123c0-12.519 10.185-22.704 22.704-22.704s22.704 10.185 22.704 22.704-10.185 22.704-22.704 22.704-22.704-10.185-22.704-22.704zm99.905-301.368c0 12.519-10.185 22.704-22.704 22.704s-22.704-10.185-22.704-22.704 10.185-22.704 22.704-22.704 22.704 10.185 22.704 22.704zm-55.133-19.203c-3.346 5.628-5.275 12.193-5.275 19.203 0 7.007 1.928 13.57 5.271 19.197-4.983 3.863-10.096 7.525-15.335 10.969-5.567-13.641-11.978-26.502-19.195-38.4-13.01-21.45-27.963-38.7-44.248-51.345 28.391 8.452 55.168 22.095 78.782 40.376zm-241.635 9.325c24.284-35.732 54.793-56.564 86.614-59.404v109.45c-13.861 2.809-24.978 13.248-28.782 26.725-29.234-4.426-57.34-14.273-82.882-28.819 6.99-17.584 15.385-33.731 25.05-47.952zm-85.683 20.709c12.915 12.734 27.086 24.003 42.231 33.658-9.664 27.516-16.153 57.886-18.998 89.632-15.562 2.433-28 14.417-31.106 29.749h-53.21c1.745-57.304 23.438-111.046 61.083-153.039zm-.153 354.623c-12.519 0-22.704-10.185-22.704-22.704s10.185-22.704 22.704-22.704 22.704 10.185 22.704 22.704-10.185 22.704-22.704 22.704zm32.436-3.513c3.342-5.626 5.268-12.187 5.268-19.191 0-7.005-1.927-13.567-5.269-19.193 4.99-3.866 10.115-7.536 15.374-10.982 7.206 17.7 15.79 34.01 25.621 48.475 11.462 16.866 24.292 30.729 38.053 41.352-28.494-8.447-55.363-22.12-79.047-40.461zm267.493-23.271c1.788.262 3.615.402 5.474.402 10.624 0 20.228-4.423 27.088-11.517 5.838 4.775 11.484 9.855 16.882 15.191-28.747 28.428-63.388 48.758-101.157 59.853 19.59-15.064 37.22-36.674 51.713-63.929z"/></g>
+                        </svg> www.fabiosantos.dev</a>
+                
+                </div>
             </div>
         </div>
+
+        <!--Footer-->
+        <div class="flex justify-end pt-2">
+          <button class="modal-close px-4 bg-indigo-500 p-3 rounded-lg text-white hover:bg-indigo-400">Fechar</button>
+        </div>
+        
+      </div>
     </div>
+  </div>
+
+  <script>
+    var openmodal = document.querySelectorAll('.modal-open')
+    for (var i = 0; i < openmodal.length; i++) {
+      openmodal[i].addEventListener('click', function(event){
+    	event.preventDefault()
+    	toggleModal()
+      })
+    }
+    
+    const overlay = document.querySelector('.modal-overlay')
+    overlay.addEventListener('click', toggleModal)
+    
+    var closemodal = document.querySelectorAll('.modal-close')
+    for (var i = 0; i < closemodal.length; i++) {
+      closemodal[i].addEventListener('click', toggleModal)
+    }
+    
+    document.onkeydown = function(evt) {
+      evt = evt || window.event
+      var isEscape = false
+      if ("key" in evt) {
+    	isEscape = (evt.key === "Escape" || evt.key === "Esc")
+      } else {
+    	isEscape = (evt.keyCode === 27)
+      }
+      if (isEscape && document.body.classList.contains('modal-active')) {
+    	toggleModal()
+      }
+    };
+    
+    
+    function toggleModal () {
+      const body = document.querySelector('body')
+      const modal = document.querySelector('.modal')
+      modal.classList.toggle('opacity-0')
+      modal.classList.toggle('pointer-events-none')
+      body.classList.toggle('modal-active')
+    }
+    
+     
+  </script>
 </body>
 </html>
